@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../features/navigation/screens/main_navigation_screen.dart';
+import '../router/app_router.dart';
 
 class FitQuestApp extends StatelessWidget {
   const FitQuestApp({super.key});
@@ -11,12 +11,9 @@ class FitQuestApp extends StatelessWidget {
 
       title: 'FitQuest',
 
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.green,
-      ),
+      onGenerateRoute: AppRouter.generateRoute,
 
-      home: const MainNavigationScreen(),
+      initialRoute: '/',
     );
   }
 }
