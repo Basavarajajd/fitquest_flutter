@@ -1,10 +1,12 @@
 import 'dart:async';
 
 class StepService {
-  StreamSubscription? _subscription;
+  final _stepController = StreamController<int>.broadcast();
+  Stream<int> get stepStream => _stepController.stream;
 
-  void start() {}
-  void stop() {
-    _subscription?.cancel();
+  void startListening() {}
+  void stop() {}
+  void dispose() {
+    _stepController.close();
   }
 }
