@@ -10,46 +10,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
-      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Java (required for Android build)
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
-      # 3. Setup Flutter SDK
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
-      # 4. Show environment (debug step)
       - name: Flutter Doctor
         run: flutter doctor -v
 
-      # 5. Clean old builds
       - name: Clean project
         run: flutter clean
 
-      # 6. Get dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # 7. Accept Android licenses (safe CI fix)
       - name: Accept Android licenses
         run: yes | flutter doctor --android-licenses || true
 
-      # 8. Build APK (release)
       - name: Build APK
-        run: flutter build apk --release -v
+        run: flutter build apk --release
 
-      # 9. Upload APK artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
