@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-     - name: Flutter Doctor
+      - name: Flutter Doctor
         run: flutter doctor -v
 
       - name: Accept Android licenses
