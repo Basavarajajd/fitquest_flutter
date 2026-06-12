@@ -32,6 +32,15 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+     - name: Flutter Doctor
+        run: flutter doctor -v
+
+      - name: Accept Android licenses
+        run: yes | flutter doctor --android-licenses || true
+
+      - name: Grant permissions
+        run: chmod +x android/gradlew || true
+
       - name: Build APK
         run: flutter build apk --release
 
