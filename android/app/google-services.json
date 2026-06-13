@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "491389758789",
+    "project_id": "fitquest-cf3a4",
+    "storage_bucket": "fitquest-cf3a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491389758789:android:b93ab10af990fdf47da22c",
+        "android_client_info": {
+          "package_name": "com.example.fitquest_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8AzTllBUsJfaXvKXGel9BaxLbwL4gGrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
