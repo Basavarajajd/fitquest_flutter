@@ -51,20 +51,20 @@ class ProfileScreen extends StatelessWidget {
         ])),
         const SizedBox(height: 24),
         Container(decoration: BoxDecoration(color: AppTheme.surfaceLight, borderRadius: BorderRadius.circular(18)), child: Column(children: [
-          [Icons.emoji_events_outlined, Icons.shield_outlined, Icons.history, Icons.straighten, Icons.settings_outlined, Icons.help_outline]
-            .asMap().entries.map((e) {
-              const labels = ['Achievements','Badges','Workout History','Measurements','Settings','Help & Support'];
-              return Column(children: [
-                ListTile(
-                  leading: Icon(e.value, color: AppTheme.textSecondary, size: 22),
-                  title: Text(labels[e.key], style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15)),
-                  trailing: const Icon(Icons.arrow_forward_ios, color: AppTheme.textMuted, size: 14),
-                  onTap: () {},
-                ),
-                if (e.key < 5) Divider(height: 1, color: AppTheme.surfaceLighter, indent: 56),
-              ]);
-            }).toList(),
-        ].expand((e) => e).toList())),
+          Icons.emoji_events_outlined, Icons.shield_outlined, Icons.history,
+          Icons.straighten, Icons.settings_outlined, Icons.help_outline,
+        ].asMap().entries.map((e) {
+          const labels = ['Achievements','Badges','Workout History','Measurements','Settings','Help & Support'];
+          return Column(children: [
+            ListTile(
+              leading: Icon(e.value, color: AppTheme.textSecondary, size: 22),
+              title: Text(labels[e.key], style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15)),
+              trailing: const Icon(Icons.arrow_forward_ios, color: AppTheme.textMuted, size: 14),
+              onTap: () {},
+            ),
+            if (e.key < 5) Divider(height: 1, color: AppTheme.surfaceLighter, indent: 56),
+          ]);
+        }).toList())),
       ]))),
     );
   }
