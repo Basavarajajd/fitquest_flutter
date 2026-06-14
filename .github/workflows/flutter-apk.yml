@@ -26,14 +26,13 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.44.2'
           channel: stable
           cache: true
 
       - name: Inject google-services.json
         run: |
           echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > android/app/google-services.json
-          echo "✅ google-services.json created"
-          cat android/app/google-services.json
 
       - name: Inject firebase_options.dart
         run: |
@@ -52,9 +51,6 @@ jobs:
             );
           }
           DART
-
-      - name: Flutter Doctor
-        run: flutter doctor -v
 
       - name: Clean project
         run: flutter clean
