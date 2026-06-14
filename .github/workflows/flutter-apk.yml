@@ -69,3 +69,4 @@ jobs:
         with:
           name: fitquest-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+# force rebuild Sun Jun 14 08:36:21 IST 2026
